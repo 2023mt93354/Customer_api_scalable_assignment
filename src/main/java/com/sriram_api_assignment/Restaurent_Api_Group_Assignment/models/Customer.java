@@ -1,27 +1,24 @@
 package com.sriram_api_assignment.Restaurent_Api_Group_Assignment.models;
 
-import jakarta.persistence.*;
+
 import lombok.*;
-
-
-
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="Customer")
-@Entity
+@Document(collection="Customer")
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private String id;
     private String name;
     private String address;
     private String phone;
-    @Column(name = "email")
     private String email;
     private String pincode;
     private String cardNumber;
     private String password;
+    private String username;
 }
