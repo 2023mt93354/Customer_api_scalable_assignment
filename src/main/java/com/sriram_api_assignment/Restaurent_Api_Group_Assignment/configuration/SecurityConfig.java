@@ -35,7 +35,7 @@ public class SecurityConfig {
 
                 .requestMatchers("/actuator/**").permitAll()
 
-                .requestMatchers("/customer/register", "/customer/login", "/login", "*").permitAll()
+                .requestMatchers("/customer/register", "/customer/login").permitAll()
 
                 .anyRequest().authenticated()).httpBasic(Customizer.withDefaults()).sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class).build();
     }
